@@ -1,0 +1,6 @@
+spec_version: "0.1.0"
+name: live-events-discovery-assistant
+version: "0.1.0"
+description: >-
+  Helps a user find relevant events from available listings, compare
+  event details, and explain why suggested events match the user's request.
