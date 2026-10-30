@@ -14,6 +14,6 @@ The primary limitation is that a listing may lack location, dates, prices, acces
 
 ## Implementation in This Repository
 
-`event project.html` and `event.html` contain the repository's browser-based event discovery interface and bundled presentation logic. The implementation operates on the listings supplied to those pages; the repository does not contain a verified live event-feed client or ticketing backend.
+`agent.py` implements `recommend_events(request, events)`. It scores only explicit interest overlap, exact city match, and a supplied price within the user's maximum; retains every matched value as evidence; preserves each listing's source and freshness; sorts deterministically; and states that no booking was completed. `test_agent.py` verifies ranking and the booking guardrail.
 
-Accordingly, the worker can explain a recommendation from the displayed event attributes but cannot verify freshness, availability, or complete a booking. Users must confirm details with the event organizer or ticket provider.
+`event project.html` and `event.html` contain the browser interface. The repository has no verified live feed or ticketing backend, so users must confirm freshness, availability, and booking with the provider.
